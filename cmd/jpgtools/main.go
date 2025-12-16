@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"jpgtools/internal/compress"
-	"jpgtools/internal/overlay"
+	"github.com/yegorkir/jpgtools/internal/compress"
+	"github.com/yegorkir/jpgtools/internal/overlay"
 )
 
 func main() {

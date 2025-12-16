@@ -10,9 +10,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"jpgtools/internal/common"
-	"jpgtools/internal/imageutil"
-	"jpgtools/internal/mozjpeg"
+	"github.com/yegorkir/jpgtools/internal/common"
+	"github.com/yegorkir/jpgtools/internal/imageutil"
+	"github.com/yegorkir/jpgtools/internal/mozjpeg"
 )
 
 type options struct {

@@ -17,7 +17,7 @@
 # Сборка CLI в текущей директории
 go build -o jpgtools ./cmd/jpgtools
 
-# Если окружение тянет устаревший GOROOT (например, go1.25.0),
+# Если окружение тянет устаревший GOROOT,
 # подскажите актуальный путь:
 env GOCACHE=$(pwd)/.gocache \
     GOROOT=/opt/homebrew/opt/go/libexec \
