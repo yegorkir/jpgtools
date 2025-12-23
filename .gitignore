@@ -33,3 +33,4 @@ go.work.sum
 
 # Go build cache
 .gocache/
+.DS_Store
