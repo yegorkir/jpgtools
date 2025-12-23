@@ -32,11 +32,20 @@
           <p>
             Перетащи JPEG сюда или выбери из папки. Можно несколько файлов сразу.
           </p>
-          <label class="button">
-            Выбрать файлы
-            <input id="file-input" type="file" accept="image/jpeg" multiple />
-          </label>
+          <div class="picker-grid">
+            <div class="picker-zone" id="file-zone" role="button" tabindex="0">
+              Файлы: нажми, чтобы выбрать или перетащи сюда
+            </div>
+            <div class="picker-zone" id="folder-zone" role="button" tabindex="0">
+              Папки: нажми, чтобы выбрать или перетащи сюда
+            </div>
+          </div>
+          <input id="file-input" type="file" accept="image/jpeg" multiple />
+          <input id="folder-input" type="file" accept="image/jpeg" multiple webkitdirectory />
           <div class="hint">Поддерживаются .jpg и .jpeg</div>
+          <div class="file-list" id="file-list">
+            <div class="file-empty">Файлы еще не добавлены.</div>
+          </div>
         </div>
       </section>
 
@@ -84,6 +93,9 @@
 
       <section class="card status">
         <h2>Результаты</h2>
+        <button class="button primary download-all" id="download-all" disabled hidden>
+          Скачать все (0 осталось)
+        </button>
         <div id="status-empty">
           Пока ничего не обработано. После сжатия здесь появятся ссылки на файлы.
         </div>
@@ -95,6 +107,7 @@
       <span>Работает локально в браузере · Без серверов</span>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
