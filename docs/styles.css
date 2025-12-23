@@ -1,0 +1,262 @@
+:root {
+  --bg: #f2ede6;
+  --ink: #1c1a16;
+  --accent: #ff6b35;
+  --accent-strong: #e14c1a;
+  --card: #ffffff;
+  --muted: #6e6a64;
+  --shadow: rgba(19, 16, 12, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #fff5e6 0%, var(--bg) 60%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 20px 40px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(0px);
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.orb-1 {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, #ffd7a8, transparent 70%);
+  top: -120px;
+  right: -100px;
+}
+
+.orb-2 {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, #ffe6c2, transparent 70%);
+  bottom: -140px;
+  left: -120px;
+}
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  z-index: 1;
+  animation: float-in 0.7s ease-out;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 8px 14px;
+  background: #1c1a16;
+  color: #fff4e2;
+  font-family: "Rubik Mono One", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  margin: 0 0 12px;
+}
+
+.hero p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.layout {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  z-index: 1;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 14px 30px var(--shadow);
+  border: 1px solid #f5efe7;
+  animation: rise 0.6s ease-out;
+}
+
+.upload {
+  border: 2px dashed #f2c8a6;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.upload.dragover {
+  border-color: var(--accent);
+  background: #fff6ed;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input[type="number"] {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e1d7c8;
+  font-size: 14px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #f8f1e8;
+  color: var(--ink);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.button.primary:hover {
+  background: var(--accent-strong);
+}
+
+.button.ghost {
+  background: transparent;
+  border: 1px solid #e1d7c8;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.status-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: #fff8f1;
+  border: 1px solid #f1dfca;
+}
+
+.status-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.status-meta span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  z-index: 1;
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 24px 16px 32px;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .hero p {
+    margin: 0 auto;
+  }
+}
